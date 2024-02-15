@@ -8,7 +8,7 @@ pdf_directory = os.getcwd()
 
 # Initialize CSV writer
 csv_file = "output.csv"
-csv_header = ["Email Addresses", "IP Addresses", "Source File"]
+csv_header = ["Email Address", "IP Address", "Source File"]
 with open(csv_file, mode='w', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(csv_header)
@@ -28,10 +28,12 @@ def process_pdf(pdf_file):
         for page in pdf:
             text += page.get_text()
     emails, ips = extract_addresses(text)
-    if emails or ips:
+    for i in range(max(len(emails), len(ips))):
+        email = emails[i] if i < len(emails) else ""
+        ip = ips[i] if i < len(ips) else ""
         with open(csv_file, mode='a', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow([", ".join(emails) if emails else "", ", ".join(ips) if ips else "", os.path.basename(pdf_file)])
+            writer.writerow([email, ip, os.path.basename(pdf_file)])
 
 # Process all PDF files in the directory
 for filename in os.listdir(pdf_directory):

@@ -1,7 +1,10 @@
-Email Addresses,IP Addresses,Source File
-felix@notreal.com,"6.6.6.6, 7.7.7.7",example-1email-2ip.pdf
-"edward@notreal.com, edwardsecond@notreal.com",5.5.5.5,example-2email-1ip.pdf
-"david@notreal.com, davidsecond@notreal.com","3.3.3.3, 4.4.4.4",example-2email-2ip.pdf
+Email Address,IP Address,Source File
+felix@notreal.com,6.6.6.6,example-1email-2ip.pdf
+,7.7.7.7,example-1email-2ip.pdf
+edward@notreal.com,5.5.5.5,example-2email-1ip.pdf
+edwardsecond@notreal.com,,example-2email-1ip.pdf
+david@notreal.com,3.3.3.3,example-2email-2ip.pdf
+davidsecond@notreal.com,4.4.4.4,example-2email-2ip.pdf
 ,2.2.2.2,example-noemail.pdf
 alex@notreal.com,,example-noip.pdf
 johnathen@notreal.com,1.1.1.1,example.pdf
